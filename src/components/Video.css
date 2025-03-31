@@ -1,0 +1,8 @@
+.video-container {
+  height: 100%;
+}
+
+video {
+  width: auto; /* 부모 컨테이너의 크기에 맞춤 */
+  height: 100%; /* 비율을 유지하며 높이 자동 조정 */
+}
