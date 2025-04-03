@@ -1,8 +1,25 @@
 .video-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 20px auto;
   height: 100%;
 }
 
 video {
-  width: auto; /* 부모 컨테이너의 크기에 맞춤 */
-  height: 100%; /* 비율을 유지하며 높이 자동 조정 */
+  max-width: 100%;
+  height: auto;
+}
+
+/* 모바일 화면에서 레이아웃 변경 */
+@media (max-width: 768px) {
+  .video-container {
+    order: -1; /* 영상이 맨 위로 오도록 설정 */
+    width: 100%;
+  }
+
+  video {
+    width: 100%; /* 모바일 화면에 맞게 영상 크기 조정 */
+    height: auto;
+  }
 }

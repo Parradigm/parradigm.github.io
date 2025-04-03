@@ -5,22 +5,27 @@
 
 .content {
   display: flex;
+  flex-direction: row; /* 기본적으로 가로 정렬 */
   height: 100vh;
 }
 
 .video-section {
-  flex: 0;
+  flex: 0 0 30%; /* 왼쪽 30%를 차지 */
   background-color: #e0e0e0; /* 회색 배경 */
   display: flex;
   justify-content: center;
   align-items: center;
   height: 100vh;
-  width: 60%;
-  margin: 0 auto; /* 가운데 정렬 */
+}
+
+.video-section video {
+  width: 100%; /* 섹션 너비에 맞게 조정 */
+  height: 100%; /* 섹션 높이에 맞게 조정 */
+  object-fit: cover; /* 비율 유지 및 화면에 꽉 차도록 조정 */
 }
 
 .main-section {
-  flex: 1;
+  flex: 1; /* 나머지 70%를 차지 */
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -88,4 +93,55 @@
 
 .email-input button:hover {
   background-color: #0056b3;
+}
+
+.app-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 20px;
+}
+
+/* 모바일 화면에서 레이아웃 변경 */
+@media (max-width: 768px) {
+  .content {
+    flex-direction: column; /* 세로 정렬로 변경 */
+  }
+
+  .video-section {
+    order: -1; /* 영상 섹션을 맨 위로 이동 */
+    width: 100%; /* 모바일 화면에 맞게 너비 조정 */
+    height: 100vh; /* 모바일 화면 높이에 맞게 조정 */
+  }
+
+  .video-section video {
+    width: 100%; /* 모바일 화면 너비에 맞게 조정 */
+    height: 100%; /* 모바일 화면 높이에 맞게 조정 */
+    object-fit: cover; /* 비율 유지 및 화면에 꽉 차도록 조정 */
+  }
+
+  .main-section {
+    width: 100%; /* 모바일 화면에 맞게 너비 조정 */
+    padding: 10px; /* 여백 조정 */
+  }
+
+  .app-container {
+    flex-direction: column; /* 모바일에서도 기본적으로 세로 정렬 */
+  }
+}
+
+/* 화면 크기가 모바일 이상일 때 */
+@media (min-width: 769px) {
+  .content {
+    flex-direction: row; /* 가로 정렬 유지 */
+  }
+
+  .video-section {
+    flex: 0 0 30%; /* 왼쪽 30%를 차지 */
+    height: 100vh; /* 높이 유지 */
+  }
+
+  .main-section {
+    flex: 1; /* 나머지 70%를 차지 */
+  }
 }
