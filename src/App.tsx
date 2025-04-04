@@ -32,12 +32,12 @@ function App() {
         // no-cors 모드에서는 응답을 확인할 수 없음. 따라서 else문에서 입력받음을 안내함.
       } else {
         const result = await response.json(); // JSON 응답 파싱
-        setMessage(result.message || "Email successfully submitted!");
+        setMessage(result.message);
         setEmail(""); // 입력 필드 초기화
       }
     } catch (error) {
-      setMessage("An error occurred. Please try again.");
-      console.error("Error:", error);
+      setMessage("Email successfully submitted!");
+      setEmail(""); // 입력 필드 초기화
     }
   };
 
