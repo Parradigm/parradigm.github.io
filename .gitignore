@@ -23,3 +23,5 @@ yarn-debug.log*
 yarn-error.log*
 
 /public/parrodigm.mp4
+
+/src/assets/credential.json
