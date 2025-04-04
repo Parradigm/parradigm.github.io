@@ -55,6 +55,12 @@ function App() {
             Perfect customization, <br />
             back to where it all began
           </h1>
+          <h4>
+            <b>
+              Shop effortlessly using just your{" "}
+              <span className="highlight">voice</span>
+            </b>
+          </h4>
           <p className="sub-heading">
             Join and be the <span className="highlight">first</span> to
             experience innovation

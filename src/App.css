@@ -49,6 +49,7 @@
   font-size: 32px;
   font-weight: bold;
   margin-bottom: 20px;
+  line-height: 1; /* 줄 간격을 줄이기 위해 추가 */
 }
 
 .sub-heading {
